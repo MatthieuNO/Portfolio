@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Midorima'; /* Nom de la police que vous utiliserez */
+  src: url('../fonts/Midorima-PersonalUse-Regular.ttf') format('truetype'); /* Chemin vers votre fichier de police */
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+ // font-family: 'Permanent Marker', cursive;
+  //font-family: 'Schoolbell', cursive;
+  font-family: 'Midorima';
+  letter-spacing: 5px;
+}
+
+h2,
+h3,
+h4,
+p,
+ul,
+button,
+span {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0;
+}
+
+
+a {
+  list-style: none;
+  text-decoration: none;
+}

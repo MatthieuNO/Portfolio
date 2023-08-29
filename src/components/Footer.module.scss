@@ -1,0 +1,47 @@
+@use '../assets/styles/mixins' as mixin;
+
+footer {
+    background-color: var(--gray-1);
+
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    height: auto;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.footerLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 140px;
+    font-size: 1.3em;
+    gap: 30px;
+    @include mixin.sm-lt {
+        font-size: 0.8em; 
+    }
+    ul {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        gap: 15px;
+        a {
+            color: var(--gray-4);
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 2.5rem;
+            &:hover {
+                color: white;
+            }
+        }
+        
+    }
+}

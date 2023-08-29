@@ -1,0 +1,115 @@
+@use "../assets/styles/mixins" as mixin;
+
+h1 {
+    font-size: 6.5em;
+    @include mixin.md-lt {
+      font-size: 4em;
+    }  
+}
+.Frontend{
+  display: inline-block;
+  .FrontendWeb {
+    border-right: 3px solid var(--red-1);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+    typing 3s steps(22),
+    cursor .4s step-end infinite alternate;
+  }
+}
+@keyframes cursor {
+  50% { border-color: transparent;}
+}
+@keyframes typing {
+  from { width: 0}
+}
+
+.body {
+  height: 100vh;
+  background-color: var(--gray-1);
+  color: var(--red-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .endContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    @include mixin.md-lt {
+      margin-top: 500px;
+    }
+    
+    h2 {
+      font-size: 1.5em;
+    }
+    ul {
+      border: solid 1px var(--red-1);
+      padding: 5px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+  
+      li {
+          animation: fadeInOut 3s infinite; /* Utilisation de l'animation */
+          animation-delay: 1s; /* Pas de retard pour le premier élément */
+      }
+
+      li:nth-child(2) {
+          animation-delay: 2s; /* 2 secondes de retard pour le deuxième élément */
+      }
+
+      li:nth-child(3) {
+          animation-delay: 3s; /* 4 secondes de retard pour le troisième élément */
+      }
+  }
+  
+  @keyframes fadeInOut {
+      0%, 100% {
+          opacity: 1;
+      }
+      50% {
+          opacity: 0;
+      }
+  }
+  }  
+}
+
+
+.container {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 138px;
+     img {
+      height: 600px;
+      border-radius: 5%;
+      @include mixin.lg {
+        height: 400px
+      }
+      @include mixin.md-lt {
+        display: none;
+      }
+    }
+    .title {
+      position: absolute;
+      top: 25%;
+      left: 30%;
+      z-index: 50; 
+      @include mixin.md-lt {
+        left: 18%;
+      }
+    } 
+    h3  {
+      margin-top: 10px;
+    }
+  }
+  
+

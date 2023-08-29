@@ -1,0 +1,81 @@
+@use "./mixins" as mixin;
+
+.navBTN {
+  background-color: var(--gray-1);
+  font-size: 16px;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  @include mixin.md-lt {
+    padding: 4px 12px;
+  }
+}
+
+.navBTN::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--red-1);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+.navBTN:hover::before {
+  width: 75%;
+}
+
+.skill {
+  z-index: 0;
+  position: relative;
+      &::after {
+      transition: all 0.1s ease-in-out;
+      content: "";
+      position: absolute;
+      bottom: 13.5%;
+      z-index: -1;
+      height: 0.3em;
+      width: 104%;
+      left: -1%;
+  }
+}
+
+.aboutBTN {
+  background-color: var(--red-1);
+  font-size: 1em;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.submitBTN {
+  color: var(--gray-1);
+  background-color: var(--red-1);
+  font-size: 1em;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.flex{
+  display: flex;
+  gap: 30px;
+  @include mixin.xxl {
+    flex-direction: column;
+}
+}

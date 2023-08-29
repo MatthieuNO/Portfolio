@@ -1,0 +1,111 @@
+@use "../assets/styles/mixins" as mixin;
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50vh 50vh;
+    gap: 0;
+    height: auto;
+    @include mixin.x-a {
+        grid-template-columns: 100% ;
+        grid-template-rows: 50vh 50vh 50vh 50vh;
+      }
+      @include mixin.sm-lt {
+        grid-template-rows: auto;
+      }
+}
+  
+  .gridItem3 {
+    background-color: #f0f0f0;
+    padding: 77px;
+    font-size: 1em;  
+    line-height: 30px;
+    @include mixin.md-lt {
+        padding: 25px;
+        line-height: 25px;
+      }  
+    h3 {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .about {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+    }
+}
+  .gridItem2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--red-1);
+    color: white;
+    @include mixin.sm-lt {
+        padding: 25px;
+      }
+}
+  .gridItem4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h2 {
+        font-size: 3em;
+        margin-bottom: 40px;
+        @include mixin.md-lt {
+            font-size: 1.3em;
+          } 
+    }
+    h3 {
+        font-size: 1.5em;
+        font-weight: bold;
+        border: solid 2px black;
+        padding: 5px;
+        border-radius: 5px;
+        @include mixin.md-lt {
+            font-size: 1em;
+          } 
+    }
+        .skillDevelopment {
+            align-items: center;
+            padding: 25px;
+           display: flex;
+           flex-direction: row;
+           gap: 15px;
+           i {
+            font-size: 2em;
+            @include mixin.md-lt {
+                font-size: 1em;
+              } 
+           }
+           span {
+               font-size: 2em;
+               font-weight: bold;
+               @include mixin.md-lt {
+                font-size: 1em;
+              } 
+           }
+        }
+    }
+
+
+
+.orange {
+    &::after {
+        background-color: #ffa801;
+    }
+}.blue {
+    &::after {
+       
+        background-color: #0fbcf9;
+    }
+}.js {
+    &::after {
+        background-color: #ffd32a;
+    }
+}.figma {
+    &::after {
+        background-color: #575fcf;
+    }
+}
+

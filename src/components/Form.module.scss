@@ -1,0 +1,55 @@
+@use '../assets/styles/mixins' as mixin;
+
+.form {
+    max-width: 1760px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.15em;
+    display: flex;
+    flex-direction: column;
+    @include mixin.sm-lt {
+        font-size: 0.8em;
+    }    
+    article {
+        color: var(--red-1);
+        font-size: 3em;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        @include mixin.sm-lt {
+            font-size: 1.8em;
+        }
+    }
+    .formRow {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        margin-bottom: 3rem;
+        @include mixin.sm-lt {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+    .formInput {
+        display: flex;
+        flex-direction: column;
+        color: var(--red-1);
+    }
+    .formStyle {
+        border: 0;
+        padding: 0.6em;
+        padding-left: 0;
+        color: var(--red-1);
+        background: transparent;
+        border-bottom: 1px solid var(--red-1);
+        font-size: 1.15em;
+        color: var(--red-1);
+    }
+    textarea {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.15em;
+    }
+    .formBTN {
+        margin-top: 25px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,159 @@
+@use "../assets/styles/mixins" as mixin;
+
+.ProjectPage {
+    height: auto;
+    background-color: var(--gray-1);
+    color: var(--red-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        font-size: 3em;
+        padding: 68px;
+    }
+
+
+    .ProjectIMG {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        @include mixin.xxl {
+            flex-direction: column;
+        }
+        
+        .imgContent {
+            position: relative;
+    
+            img {
+                height: 300px;
+                width: auto;
+                position: relative;
+                z-index: 1; /* Place l'image au-dessus du texte */
+                cursor: pointer;
+                transition: 0.3s;
+                border-radius: 10px;
+                &:hover {
+                    opacity: 0.3;
+                }
+                @include mixin.xxl {
+                    height: 200px;
+                }
+                @include mixin.xxs {
+                    height: 150px;
+                }
+                
+            }
+    
+            .infos {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                transition: opacity 0.3s;
+                pointer-events: none;
+                z-index: 0; /* Place le texte derrière l'image */
+                font-size: 2em;
+                font-weight: bold;
+    
+                .imgContent:hover + .img img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    
+    .ProjectContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.1em;
+        padding: 30px;
+        border-radius: 10px;
+        gap: 10px;
+        position: relative;
+        transition: 0.3s;
+        
+        h3 {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+}    
+
+.CustomModal {
+    background-color: white;
+    border-radius: 10px;
+    max-width: 95%; /* Ajustez la largeur maximale */
+}
+
+.Overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+}
+
+.ModalContent {
+    padding: 35px;
+    display: flex;
+    flex-direction: row;
+    gap: 17px;
+    @include mixin.xxl {
+        height: auto;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .ModalClose {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 50px;
+        @include mixin.xxl {
+           margin: 0;
+        }
+        
+    }
+    button {
+        position: relative;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2em;
+        transition: 0.2s;
+        &:hover {
+            opacity: 0.6;
+            color: var(--red-1);
+        }
+    }
+    .ModalInfos {
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        ul {
+            align-items: center;
+           display: flex;
+           flex-direction: column;
+           gap: 5px;
+           font-weight: bold;
+       }
+    }
+    img {
+        box-shadow: 2px 2px 2px 2px var(--gray-2);
+        height: 370px;
+        width: auto;
+        border-radius: 10px;
+        @include mixin.xxl {
+            height: 200px;
+            width: auto;
+        }
+      }
+}
